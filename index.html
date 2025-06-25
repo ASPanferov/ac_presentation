@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Connect - Инвестиционная презентация</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="presentation-styles.css">
+    <!-- D3.js для схем экосистемы -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Chart.js для диаграмм -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Навигация -->
+        <nav class="presentation-nav">
+            <div class="nav-content">
+                <div class="nav-left">
+                    <img src="./images/angel_connect_logo.png" alt="Angel Connect" class="nav-logo">
+                </div>
+                <div class="nav-center">
+                    <div class="slide-counter">
+                        <span class="current-slide">1</span> / <span class="total-slides">9</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <button class="nav-btn" id="prev-btn">←</button>
+                    <button class="nav-btn" id="next-btn">→</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Контейнер слайдов -->
+        <div class="slides-container">
+            
+            <!-- Слайд 1: Заголовок -->
+            <div class="slide active" data-slide="1">
+                <div class="slide-content title-slide">
+                    <div class="title-content">
+                        <div class="logo-section">
+                            <img src="./images/angel_connect_logo.png" alt="Angel Connect" class="main-logo">
+                        </div>
+                        <h1 class="main-title">ANGEL CONNECT</h1>
+                        <h2 class="subtitle">ИНКУБАТОР</h2>
+                        <p class="tagline">Первая стартап-экосистема Центральной Азии</p>
+                        <div class="investment-highlight">
+                            <span class="investment-amount">Инвестиционная возможность $600k за 9% Angel Connect</span>
+                            <span class="equity-offer">Pre-money валуация $6,67M • 5% от стартапов за инкубацию</span>
+                        </div>
+                        <div class="team-preview">
+                            <div class="team-photos">
+                                <img src="./images/Artem_Panferov.jpg" alt="Артем Панферов" class="team-photo">
+                                <img src="./images/vitali.jpg" alt="Виталий Тарасюк" class="team-photo">
+                                <img src="./images/sirogiddin.jpg" alt="Сирожиддин Аслонов" class="team-photo">
+                                <img src="./images/Artem_strel.png" alt="Артем Стрельченок" class="team-photo">
+                            </div>
+                            <p class="contact-info">@networkangelconnect • IT-парк, Ташкент</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 2: Проблема и возможность -->
+            <div class="slide" data-slide="2">
+                <div class="slide-content">
+                    <h1 class="slide-title">Проблема и возможность</h1>
+                    <div class="opportunity-layout">
+                        <div class="problem-section">
+                            <div class="problem-icon">❗</div>
+                            <h3>Проблема</h3>
+                            <ul>
+                                <li>Стартапы ЦА имеют ограниченный доступ к капиталу</li>
+                                <li>Отсутствие системной поддержки и менторства</li>
+                                <li>Нет связи с международными рынками</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="solution-section">
+                            <div class="solution-icon">💡</div>
+                            <h3>Наше решение</h3>
+                            <p class="solution-text">Angel Connect - первый профессиональный инкубатор в Центральной Азии</p>
+                            <div class="market-stats">
+                                <div class="stat">
+                                    <span class="stat-number">$95M</span>
+                                    <span class="stat-label">Рынок ВК ЦА</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">400+</span>
+                                    <span class="stat-label">Стартапов</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">35%</span>
+                                    <span class="stat-label">Рост/год</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 3: Бизнес-модель -->
+            <div class="slide" data-slide="3">
+                <div class="slide-content">
+                    <h1 class="slide-title">Бизнес-модель Angel Connect</h1>
+                    <div class="business-model">
+                        <div class="model-flow">
+                            <div class="model-step">
+                                <div class="step-icon">🏆</div>
+                                <h3>Отбор</h3>
+                                <p>Строгий отбор лучших стартапов ЦА</p>
+                                <span class="step-metric">8% acceptance rate</span>
+                            </div>
+                            <div class="arrow-right">→</div>
+                            <div class="model-step">
+                                <div class="step-icon">🚀</div>
+                                <h3>Инкубация</h3>
+                                <p>3-месячная интенсивная программа</p>
+                                <span class="step-metric">40 стартапов/год</span>
+                            </div>
+                            <div class="arrow-right">→</div>
+                            <div class="model-step">
+                                <div class="step-icon">💰</div>
+                                <h3>Инвестиции</h3>
+                                <p>$10k-50k + получаем 5% доли</p>
+                                <span class="step-metric">Angel Club</span>
+                            </div>
+                            <div class="arrow-right">→</div>
+                            <div class="model-step">
+                                <div class="step-icon">📈</div>
+                                <h3>Рост</h3>
+                                <p>Поддержка до Series A</p>
+                                <span class="step-metric">Exit strategy</span>
+                            </div>
+                        </div>
+                        
+                        <div class="revenue-streams">
+                            <h3>Источники дохода</h3>
+                            <div class="revenue-grid">
+                                <div class="revenue-item">
+                                    <span class="revenue-percent">70%</span>
+                                    <span class="revenue-label">Доли в стартапах</span>
+                                </div>
+                                <div class="revenue-item">
+                                    <span class="revenue-percent">20%</span>
+                                    <span class="revenue-label">Плата за программу</span>
+                                </div>
+                                <div class="revenue-item">
+                                    <span class="revenue-percent">10%</span>
+                                    <span class="revenue-label">Консалтинг</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 4: Текущие результаты -->
+            <div class="slide" data-slide="4">
+                <div class="slide-content">
+                    <h1 class="slide-title">Наши результаты</h1>
+                    <div class="results-dashboard">
+                        <div class="results-metrics">
+                            <div class="metric-big">
+                                <span class="metric-number">27</span>
+                                <span class="metric-label">Портфельных<br>компаний</span>
+                            </div>
+                            <div class="metric-big">
+                                <span class="metric-number">200+</span>
+                                <span class="metric-label">Заявок<br>получено</span>
+                            </div>
+                            <div class="metric-big">
+                                <span class="metric-number">8%</span>
+                                <span class="metric-label">Уровень<br>принятия</span>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-highlights">
+                            <h3>Успешные кейсы</h3>
+                            <div class="portfolio-grid">
+                                <div class="portfolio-item">
+                                    <div class="company-logo">🏥</div>
+                                    <h4>Lima CRM</h4>
+                                    <p>CRM для медпредставителей</p>
+                                    <span class="valuation">+300% рост</span>
+                                </div>
+                                <div class="portfolio-item">
+                                    <div class="company-logo">🤖</div>
+                                    <h4>Mars Team</h4>
+                                    <p>ИИ анализ документов</p>
+                                    <span class="valuation">Серия А готов</span>
+                                </div>
+                                <div class="portfolio-item">
+                                    <div class="company-logo">🌱</div>
+                                    <h4>AGROCHECK</h4>
+                                    <p>ИИ диагностика растений</p>
+                                    <span class="valuation">50k+ пользователей</span>
+                                </div>
+                                <div class="portfolio-item">
+                                    <div class="company-logo">📊</div>
+                                    <h4>EQ Analytics</h4>
+                                    <p>Бизнес-аналитика</p>
+                                    <span class="valuation">Международный выход</span>
+                                </div>
+                            </div>
+                            
+                            <div class="data-note">
+                                ⚠️ Заменить на реальные кейсы и актуальные метрики портфельных компаний
+                            </div>
+                        </div>
+                        
+                        <div class="sectors-chart">
+                            <h3>Распределение по секторам</h3>
+                            <div id="sectorChart" class="chart-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 5: Команда -->
+            <div class="slide" data-slide="5">
+                <div class="slide-content">
+                    <h1 class="slide-title">Наша команда</h1>
+                    <div class="team-showcase">
+                        <div class="founders-row">
+                            <div class="founder-card">
+                                <img src="./images/Artem_Panferov.jpg" alt="Артем Панферов" class="founder-photo">
+                                <h3>Артем Панферов</h3>
+                                <h4>Co-founder & CPO</h4>
+                                <p>Продукты и бизнес-анализ. Опыт в стартапах и корпоративном развитии.</p>
+                            </div>
+                            <div class="founder-card">
+                                <img src="./images/vitali.jpg" alt="Виталий Тарасюк" class="founder-photo">
+                                <h3>Виталий Тарасюк</h3>
+                                <h4>Co-founder & CTO</h4>
+                                <p>Основатель PRO BUSINESS клуба. Эксперт по нетворкингу и созданию сообществ.</p>
+                            </div>
+                            <div class="founder-card">
+                                <img src="./images/sirogiddin.jpg" alt="Сирожиддин Аслонов" class="founder-photo">
+                                <h3>Сирожиддин Аслонов</h3>
+                                <h4>Co-founder & CEO</h4>
+                                <p>Бизнес-развитие и локальная экспертиза. Связи в правительстве и крупном бизнесе.</p>
+                            </div>
+                            <div class="founder-card">
+                                <img src="./images/Artem_strel.png" alt="Артем Стрельченок" class="founder-photo">
+                                <h3>Артем Стрельченок</h3>
+                                <h4>Strategic Advisor</h4>
+                                <p>Консалтинг и стратегическое планирование. Международный опыт в ВК.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-stats">
+                            <div class="team-stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">лет совместного опыта</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">страны присутствия</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">менторов в сети</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 6: Инвестиционное предложение -->
+            <div class="slide" data-slide="6">
+                <div class="slide-content">
+                    <h1 class="slide-title">Инвестиционное предложение</h1>
+                    <div class="investment-offer">
+                        <div class="offer-highlight">
+                            <div class="offer-amount">
+                                <span class="amount-number">$600,000</span>
+                                <span class="amount-label">Привлекаем инвестиций</span>
+                            </div>
+                            <div class="offer-equity">
+                                <span class="equity-number">9%</span>
+                                <span class="equity-label">Доли в Angel Connect</span>
+                            </div>
+                            <div class="offer-valuation">
+                                <span class="valuation-number">$6,67M</span>
+                                <span class="valuation-label">Pre-money валуация</span>
+                            </div>
+                        </div>
+                        
+                        <div class="investment-terms">
+                            <h3>Обоснование валуации $6,67M</h3>
+                            <div class="valuation-note">
+                                <p><strong>Pre-revenue стадия</strong> с готовой бизнес-моделью и первопроходцами на рынке ЦА</p>
+                            </div>
+                            <div class="terms-grid">
+                                <div class="term-item">
+                                    <div class="term-icon">🎯</div>
+                                    <h4>Потенциал рынка</h4>
+                                    <p>$95M ВК рынок ЦА, 35% рост/год, неосвоенная ниша</p>
+                                </div>
+                                <div class="term-item">
+                                    <div class="term-icon">👥</div>
+                                    <h4>Опытная команда</h4>
+                                    <p>50+ лет совместного опыта, локальная экспертиза</p>
+                                </div>
+                                <div class="term-item">
+                                    <div class="term-icon">🏆</div>
+                                    <h4>Первопроходцы</h4>
+                                    <p>Первый профессиональный инкубатор в регионе</p>
+                                </div>
+                                <div class="term-item">
+                                    <div class="term-icon">🏛️</div>
+                                    <h4>Государственная поддержка</h4>
+                                    <p>Партнерство с IT-парком, Лукойл, Клик</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="roi-projection">
+                            <h3>Ожидаемая доходность</h3>
+                            <div class="roi-stats">
+                                <div class="roi-stat">
+                                    <span class="roi-multiple">3-5x</span>
+                                    <span class="roi-timeframe">за 5 лет</span>
+                                </div>
+                                <div class="roi-stat">
+                                    <span class="roi-multiple">25-35%</span>
+                                    <span class="roi-timeframe">IRR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 6А: Структура расходов $600k -->
+            <div class="slide" data-slide="6a">
+                <div class="slide-content">
+                    <h1 class="slide-title">Структура расходов на запуск инкубатора</h1>
+                    <div class="expenses-breakdown">
+                        <div class="total-investment">
+                            <span class="investment-amount">$600,000</span>
+                            <span class="investment-label">Общий бюджет запуска</span>
+                        </div>
+                        
+                        <div class="expenses-chart">
+                            <div class="expense-item">
+                                <div class="expense-bar" style="width: 40%; background: linear-gradient(90deg, #0066FF, #0080FF);">
+                                    <span class="expense-percent">40%</span>
+                                </div>
+                                <div class="expense-details">
+                                    <h4>Операционные расходы</h4>
+                                    <span class="expense-amount">$240,000</span>
+                                    <p>Зарплаты команды, офис, юридические услуги (24 месяца)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div class="expense-bar" style="width: 30%; background: linear-gradient(90deg, #0080FF, #00A0FF);">
+                                    <span class="expense-percent">30%</span>
+                                </div>
+                                <div class="expense-details">
+                                    <h4>Инвестиционный фонд</h4>
+                                    <span class="expense-amount">$180,000</span>
+                                    <p>Seed-инвестиции в портфельные стартапы ($10k-15k × 12-18 компаний)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div class="expense-bar" style="width: 20%; background: linear-gradient(90deg, #00A0FF, #00C0FF);">
+                                    <span class="expense-percent">20%</span>
+                                </div>
+                                <div class="expense-details">
+                                    <h4>Программа и маркетинг</h4>
+                                    <span class="expense-amount">$120,000</span>
+                                    <p>Разработка программы, привлечение менторов, маркетинг</p>
+                                </div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div class="expense-bar" style="width: 10%; background: linear-gradient(90deg, #00C0FF, #00E0FF);">
+                                    <span class="expense-percent">10%</span>
+                                </div>
+                                <div class="expense-details">
+                                    <h4>Резерв и непредвиденные</h4>
+                                    <span class="expense-amount">$60,000</span>
+                                    <p>Операционный резерв и непредвиденные расходы</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="runway-info">
+                            <div class="runway-stat">
+                                <span class="runway-number">24</span>
+                                <span class="runway-label">месяца runway</span>
+                            </div>
+                            <div class="runway-stat">
+                                <span class="runway-number">40</span>
+                                <span class="runway-label">стартапов в программе</span>
+                            </div>
+                            <div class="runway-stat">
+                                <span class="runway-number">3</span>
+                                <span class="runway-label">набора в год</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 7: Трекшн и портфолио -->
+            <div class="slide" data-slide="7">
+                <div class="slide-content">
+                    <h1 class="slide-title">Текущий трекшн и портфолио</h1>
+                    <div class="traction-metrics">
+                        <div class="traction-stat">
+                            <span class="traction-number">27</span>
+                            <span class="traction-label">Портфельные компании</span>
+                        </div>
+                        <div class="traction-stat">
+                            <span class="traction-number">200+</span>
+                            <span class="traction-label">Получено заявок</span>
+                        </div>
+                        <div class="traction-stat">
+                            <span class="traction-number">8%</span>
+                            <span class="traction-label">Процент принятия</span>
+                        </div>
+                        <div class="traction-stat">
+                            <span class="traction-number">3</span>
+                            <span class="traction-label">Страны</span>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-highlights">
+                        <h3>Истории успеха</h3>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-card">
+                                <h4>🏥 Lima</h4>
+                                <p>CRM для медицинских представителей</p>
+                                <span class="sector">HealthTech</span>
+                            </div>
+                            <div class="portfolio-card">
+                                <h4>🤖 Mars Team</h4>
+                                <p>ИИ анализ документов</p>
+                                <span class="sector">AI/ML</span>
+                            </div>
+                            <div class="portfolio-card">
+                                <h4>📊 EQ Analytics</h4>
+                                <p>Платформа бизнес-аналитики</p>
+                                <span class="sector">Analytics</span>
+                            </div>
+                            <div class="portfolio-card">
+                                <h4>🌱 AgroCheck</h4>
+                                <p>ИИ обнаружения болезней растений</p>
+                                <span class="sector">AgriTech</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sector-distribution">
+                        <h3>Распределение по секторам</h3>
+                        <canvas id="sectorChart" width="400" height="200"></canvas>
+                        
+                        <div class="data-note">
+                            ⚠️ Обновить диаграмму с актуальными данными портфеля
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 8: Контакты и следующие шаги -->
+            <div class="slide" data-slide="8">
+                <div class="slide-content">
+                    <h1 class="slide-title">Контакты и следующие шаги</h1>
+                    <div class="final-slide-content">
+                        <div class="investment-summary">
+                            <h2>Angel Connect - Инвестиционная возможность</h2>
+                            <div class="investment-grid">
+                                <div class="investment-item">
+                                    <span class="investment-label">Привлекаем</span>
+                                    <span class="investment-value">$600,000</span>
+                                </div>
+                                <div class="investment-item">
+                                    <span class="investment-label">За долю в Angel Connect</span>
+                                    <span class="investment-value">9%</span>
+                                </div>
+                                <div class="investment-item">
+                                    <span class="investment-label">Pre-money валуация</span>
+                                    <span class="investment-value">$6,67M</span>
+                                </div>
+                                <div class="investment-item">
+                                    <span class="investment-label">ROI модель</span>
+                                    <span class="investment-value">5% от стартапов</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-section">
+                            <h3>Контакты</h3>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <span class="contact-icon">📱</span>
+                                    <span class="contact-value">@networkangelconnect</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-icon">📍</span>
+                                    <span class="contact-value">IT-парк, Ташкент, Узбекистан</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="next-steps">
+                            <h3>Следующие шаги</h3>
+                            <div class="steps-timeline">
+                                <div class="step-item">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">Обсуждение деталей и Q&A</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">Due diligence материалы</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-number">3</span>
+                                    <span class="step-text">Подписание соглашения</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-section">
+                            <h2>Готовы инвестировать в будущее стартапов Центральной Азии?</h2>
+                            <p>Присоединяйтесь к Angel Connect уже сегодня</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="presentation-script.js"></script>
+    <script src="charts-setup.js"></script>
+</body>
+</html>
