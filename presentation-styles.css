@@ -168,14 +168,14 @@ body {
 /* Navigation - Optimized for MacBook 13" */
 .presentation-nav {
     background: #FFFFFF;
-    border-bottom: 2px solid #0066FF;
-    padding: 12px 0;
+    border-bottom: 3px solid #0066FF;
+    padding: 16px 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.15);
 }
 
 .nav-content {
@@ -184,12 +184,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    height: 50px;
+    padding: 0 24px;
+    height: 60px;
 }
 
 .nav-logo {
-    height: 28px;
+    height: 36px;
     width: auto;
 }
 
@@ -202,11 +202,13 @@ body {
 .slide-counter {
     font-weight: 600;
     color: #1A1A1A;
-    font-size: 14px;
+    font-size: 16px;
     background: #F8FAFF;
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 102, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 24px;
+    border: 2px solid rgba(0, 102, 255, 0.3);
+    min-width: 60px;
+    text-align: center;
 }
 
 .current-slide {
@@ -215,12 +217,12 @@ body {
 }
 
 .progress-bar {
-    width: 180px;
-    height: 6px;
+    width: 240px;
+    height: 8px;
     background: rgba(26, 26, 26, 0.1);
-    border-radius: 3px;
+    border-radius: 4px;
     overflow: hidden;
-    border: 1px solid rgba(0, 102, 255, 0.2);
+    border: 1px solid rgba(0, 102, 255, 0.3);
 }
 
 .progress-fill {
@@ -236,16 +238,17 @@ body {
     background: #F8FAFF;
     border: 2px solid #0066FF;
     color: #0066FF;
-    width: 36px;
-    height: 36px;
-    border-radius: 18px;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 4px;
 }
 
 .nav-btn:hover {
@@ -271,8 +274,8 @@ body {
     flex: 1;
     position: relative;
     overflow: hidden;
-    margin-top: 50px; /* Account for fixed nav */
-    height: calc(100vh - 50px);
+    margin-top: 64px; /* Account for fixed nav */
+    height: calc(100vh - 64px);
 }
 
 .slide {
@@ -324,14 +327,18 @@ body {
     align-items: center;
     text-align: center;
     justify-content: center;
+    padding: 20px 40px;
+    min-height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
 }
 
 .logo-section {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .main-logo {
-    height: 80px;
+    height: 90px;
     width: auto;
 }
 
@@ -355,8 +362,11 @@ body {
 .tagline {
     font-size: 24px;
     color: #6B7280;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .investment-highlight {
@@ -381,27 +391,42 @@ body {
 }
 
 .team-preview {
-    margin-top: 24px;
+    margin-top: 32px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .team-photos {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    align-items: center;
 }
 
 .team-photo {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #0066FF;
+    border: 4px solid #0066FF;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 102, 255, 0.3);
 }
 
 .contact-info {
     color: #6B7280;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 8px;
+    padding: 12px 0;
 }
 
 /* Split Content Layout - Optimized for landscape */
