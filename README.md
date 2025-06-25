@@ -45,7 +45,7 @@
 ## 📱 Контакты
 
 - **Telegram**: @networkangelconnect
-- **Адрес**: IT-парк, Ташкент, Узбекистан
+- **Адрес**: Ташкент, Узбекистан
 - **GitHub**: [ASPanferov/ac_presentation](https://github.com/ASPanferov/ac_presentation)
 
 ## 🔧 Технические детали
